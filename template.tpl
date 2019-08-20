@@ -1,4 +1,4 @@
-﻿___INFO___
+___INFO___
 
 {
   "displayName": "Adtraction Conversion",
@@ -327,24 +327,29 @@ const injectScript = require('injectScript');
 const copyFromWindow = require('copyFromWindow');
 const setInWindow = require('setInWindow');
 const callInWindow = require('callInWindow');
-const log = require('logToConsole');
-const baseUrl = 'https://adtr.io/jsTag?ap=' + data.ap;
+const encodeUriComponent = require('encodeUriComponent');
 
+const log = require('logToConsole');
+const baseUrl = 'https://adtr.io/jsTag?ap=' +  encodeUriComponent(data.ap);
 const sendEvent = () => {
-  	const ADT = copyFromWindow('ADT') || {};
+const ADT = copyFromWindow('ADT') || {};
+log('apa2');
   	if (!ADT.Tag) {
     	ADT.Tag = {};
   	} 
 	ADT.Tag.t = data.t;
-	ADT.Tag.c = data.c;
-  	ADT.Tag.tp = data.tp;
+	ADT.Tag.c = encodeUriComponent(data.c);
+  	ADT.Tag.tp = encodeUriComponent(data.tp);
   	ADT.Tag.ti = data.ti;
   	ADT.Tag.am = data.am;
   	ADT.Tag.xd = data.xd;
   	ADT.Tag.cpn = data.cpn;
   
   	setInWindow('ADT', ADT, true);
+	// ADT.Tag.doEvent triggers a callback to adtraction.com using a beacon (if supported) or an img pixel.
+	// The parameters sent in the callback are those specified above.
   	callInWindow('ADT.Tag.doEvent');
+	log(ADT.Tag);
 };
 
 const onSuccess = () => {
@@ -362,4 +367,4 @@ injectScript(baseUrl, onSuccess, onFailure, 'adtr');
 
 ___NOTES___
 
-Created on 2019-08-14 11:27:43
+Created on 2019-08-20 10:20:43
