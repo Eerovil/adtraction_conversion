@@ -2,7 +2,7 @@ ___INFO___
 
 {
   "displayName": "Adtraction Conversion",
-  "description": "Used to report transactions to Adtraction and should be set up to fire on the confirmation page only.",
+  "description": "Conversion measurement for the Adtraction affiliate network. Should be set up to fire on the purchase confirmation page only.",
   "securityGroups": [],
   "id": "cvt_temp_public_id",
   "type": "TAG",
@@ -103,6 +103,13 @@ ___TEMPLATE_PARAMETERS___
         "type": "NON_EMPTY"
       }
     ],
+    "enablingConditions": [
+      {
+        "paramName": "t",
+        "type": "EQUALS",
+        "paramValue": 3
+      }
+    ],
     "displayName": "Order value",
     "simpleValueType": true,
     "name": "am",
@@ -111,7 +118,19 @@ ___TEMPLATE_PARAMETERS___
   {
     "help": "Any coupon code or voucher code used in the transaction. Leave blank when no coupon code or voucher is used.",
     "macrosInSelect": true,
-    "selectItems": [],
+    "selectItems": [
+      {
+        "displayValue": "(Not set)",
+        "value": ""
+      }
+    ],
+    "enablingConditions": [
+      {
+        "paramName": "t",
+        "type": "EQUALS",
+        "paramValue": 3
+      }
+    ],
     "displayName": "Discount code",
     "simpleValueType": true,
     "name": "cpn",
@@ -120,7 +139,12 @@ ___TEMPLATE_PARAMETERS___
   {
     "help": "Please pass us the MD5 hashed email of the user. When passing hashed email addresses, make sure that the addresses are converted to lower case, trimmed, converted to UTF-8 and finally hashed using the MD5 algorithm before they are passed into the tag.",
     "macrosInSelect": true,
-    "selectItems": [],
+    "selectItems": [
+      {
+        "displayValue": "(Not set)",
+        "value": ""
+      }
+    ],
     "displayName": "Hashed email",
     "simpleValueType": true,
     "name": "xd",
@@ -367,4 +391,4 @@ injectScript(baseUrl, onSuccess, onFailure, 'adtr');
 
 ___NOTES___
 
-Created on 2019-08-20 10:20:43
+Created on 2019-09-19 16:16:06
