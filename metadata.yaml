@@ -1,5 +1,11 @@
 homepage: "www.adtraction.com",
 documentation: "https://adtraction.com/gtmtemplate.htm",
 versions:
+
+  # Latest version
   - sha: 44a4ee8d79143f1c828a658cb638c18db20815ac
+    changeNotes: Update Adtraction tracking domain
+
+  # Older versions
+  - sha: 129b8e00f4b5620840b3d50aa0b578948ffc12ca
     changeNotes: Initial Version
