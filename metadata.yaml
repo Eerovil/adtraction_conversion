@@ -5,7 +5,9 @@ versions:
   # Latest version
   - sha: 44a4ee8d79143f1c828a658cb638c18db20815ac
     changeNotes: Update Adtraction tracking domain
-
+  # Older versions
+  - sha: 8017fcd13ced4282e849b1e94de005b55a16f2dc
+    changeNotes: Update Adtraction tracking domain
   # Older versions
   - sha: 129b8e00f4b5620840b3d50aa0b578948ffc12ca
     changeNotes: Initial Version
