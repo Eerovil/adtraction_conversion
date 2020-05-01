@@ -199,7 +199,7 @@ ___WEB_PERMISSIONS___
             "listItem": [
               {
                 "type": 1,
-                "string": "https://adtr.io/jsTag?ap=*"
+                "string": "https://gtm.adt313.net/jsTag?ap=*"
               }
             ]
           }
