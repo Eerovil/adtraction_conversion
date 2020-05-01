@@ -362,7 +362,7 @@ const callInWindow = require('callInWindow');
 const encodeUriComponent = require('encodeUriComponent');
 
 const log = require('logToConsole');
-const baseUrl = 'https://adtr.io/jsTag?ap=' +  encodeUriComponent(data.ap);
+const baseUrl = 'https://gtm.adt313.net/jsTag?ap=' +  encodeUriComponent(data.ap);
 const sendEvent = () => {
 const ADT = copyFromWindow('ADT') || {};
 log('apa2');
